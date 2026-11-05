@@ -1,0 +1,24 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Settings control">
+<g id="Settings gear" filter="url(#filter0_d_0_15)">
+<use xlink:href="#stroke1_0_15" fill="#6AABCF"/>
+<mask id="stroke2_0_15" fill="white">
+<use xlink:href="#stroke1_0_15"/>
+</mask>
+<path d="M30.6562 2H43.3438L46.0625 10.1562L52.4062 12.875L60.5625 10.1562L66 21.0312L59.6562 27.375V33.7188L66 40.9688L59.6562 51.8438L51.5 49.125L45.1562 52.75L42.4375 60H30.6562L27.9375 51.8438L21.5938 48.2188L13.4375 51.8438L8 40.9688L14.3438 33.7188V27.375L8 21.0312L13.4375 10.1562L21.5938 12.875L27.9375 9.25L30.6562 2ZM37 20.125C23.4062 20.125 23.4062 41.875 37 41.875C50.5938 41.875 50.5938 20.125 37 20.125Z" stroke-width="8" stroke="white" mask="url(#stroke2_0_15)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_15" x="0" y="0" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="6"/>
+<feGaussianBlur stdDeviation="4"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.313726 0 0 0 0 0.203922 0 0 0 0 0.0666667 0 0 0 0.4 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_15"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_15" result="shape"/>
+</filter>
+<path id="stroke1_0_15" d="M30.6562 2H43.3438L46.0625 10.1562L52.4062 12.875L60.5625 10.1562L66 21.0312L59.6562 27.375V33.7188L66 40.9688L59.6562 51.8438L51.5 49.125L45.1562 52.75L42.4375 60H30.6562L27.9375 51.8438L21.5938 48.2188L13.4375 51.8438L8 40.9688L14.3438 33.7188V27.375L8 21.0312L13.4375 10.1562L21.5938 12.875L27.9375 9.25L30.6562 2ZM37 20.125C23.4062 20.125 23.4062 41.875 37 41.875C50.5938 41.875 50.5938 20.125 37 20.125Z" fill-rule="evenodd" clip-rule="evenodd"/>
+</defs>
+</svg>

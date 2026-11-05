@@ -1,0 +1,8 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="50" height="55" viewBox="0 0 50 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Stopwatch">
+<path id="Watch crown" d="M22 1H30C31.1046 1 32 1.89543 32 3V7C32 8.10457 31.1046 9 30 9H22C20.8954 9 20 8.10457 20 7V3C20 1.89543 20.8954 1 22 1Z" fill="#F8F4E6" stroke-width="2" stroke="#413B37"/>
+<path id="Watch case" d="M48 31C48 43.1503 38.1503 53 26 53C13.8497 53 4 43.1503 4 31C4 18.8497 13.8497 9 26 9C38.1503 9 48 18.8497 48 31Z" fill="#F4B944" stroke-width="2" stroke="#423B36"/>
+<path id="Watch dial" d="M43 31C43 40.3888 35.3888 48 26 48C16.6112 48 9 40.3888 9 31C9 21.6112 16.6112 14 26 14C35.3888 14 43 21.6112 43 31Z" fill="white" stroke-width="2" stroke="#BBBBAE"/>
+<path id="Watch hands" d="M26 17V20.7333M26 41.2667V45M12 31H15.7333M36.2667 31H40M34.4 23.5333L26 31V38.4667" stroke-width="2" stroke="#393F40"/>
+</g>
+</svg>
