@@ -210,6 +210,9 @@ canvas.mascot{aspect-ratio:1/1;filter:none}canvas.mascot.good,canvas.mascot.bad{
 @media (max-width:899px){.buddy{width:40px;top:6px;right:8px}}
 /* 모바일: 말풍선 높이를 두 줄로 고정 — 문구 길이가 바뀌어도 글자판이 위아래로 움직이지 않게 */
 @media (max-width:899px){.banner{height:58px;min-height:58px}.banner p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.35;max-height:52px;padding:6px 12px}}
+
+/* 급수 선택은 숨김 (기본 L1) */
+#lv{display:none!important}
 </style></head><body><div class="game">
 <header class="hd">
  <div class="plaque"><div class="in"><img id="i-mag" alt=""><img class="logo" src="solpik/logo.png" alt="SOLPIK"><h1>숨은 낱말 찾기</h1><select class="lv" id="lv"><option value="1">L1 · 1~2급</option><option value="2">L2 · 2~3급</option><option value="3">L3 · 3~4급</option></select></div></div>
@@ -228,7 +231,7 @@ canvas.mascot{aspect-ratio:1/1;filter:none}canvas.mascot.good,canvas.mascot.bad{
   <div class="tools"><button class="tool" id="mean">뜻 보기: 꺼짐</button><button class="tool m-only" id="rv2">정답 보기</button><button class="tool" id="snd">소리: 켜짐</button><button class="tool" id="next">다른 판 ▶</button></div>
  </section>
 </main>
-<div class="note" id="bid"></div>
+
 </div>
 <div class="overlay" id="ready" hidden><div class="rbox"><img class="rc l" src="solpik/red_helper.png" alt=""><div class="ready" id="readyText">READY</div><img class="rc r" src="solpik/blue_guide.png" alt=""></div></div>
 <div class="overlay" id="result" hidden><div class="popup">
@@ -244,7 +247,7 @@ const BOARDS_BY_LEVEL={"1": [{"board_id": "LV1_WORD_SEARCH_00138", "size": 5, "g
 let LV=+(new URLSearchParams(location.search).get('level'))||1;if(!BOARDS_BY_LEVEL[LV])LV=1;
 let BOARDS=BOARDS_BY_LEVEL[LV];
 // 웹게임 자산 위치: 개발 서버(·터널)에서는 /assets, 파일로 열면 프로젝트의 public/assets
-const ASSET='./assets/';
+const ASSET=location.protocol==='file:'?'../../public/assets/':'/assets/';
 
 for(const [id,f] of [['i-mag','crossword/icon_magnifier01.png'],['i-mag2','crossword/icon_magnifier01.png'],['i-watch','crossword/wide_stopwatch.svg']])document.getElementById(id).src=ASSET+f;
 
@@ -274,7 +277,6 @@ function msg(t,c=''){$('#msg').textContent=t;$('#banner').className='banner '+c;
 let gameNo=0;  // 판마다 번호 — 앞 판에서 걸어 둔 완료 처리가 다음 판에 끼어들지 않게
 function load(i){gameNo++;bi=(i+BOARDS.length)%BOARDS.length;B=BOARDS[bi];N=B.size;found=new Map();wrong=0;score=0;lastHit=0;path=[];start=null;reveal=false;clearInterval(tick);
  $('#result').hidden=true;$('#score').textContent='0';$('#time').textContent='00:00';$('#rv').classList.remove('on');$('#rv').textContent=$('#rv2').textContent='정답 보기';$('#rv2').classList.remove('on');
- $('#bid').textContent=`시안 · ${B.board_id} · ${bi+1}/${BOARDS.length}판 · 5x5 글자판에 낱말 5개를 8방향(가로·세로·대각선, 거꾸로 포함)으로 숨김. 데이터: 토픽 워크스페이스 게임 데이터 파이프라인 word_search L${LV} 산출물(레벨별 40판).`;
  boardEl.innerHTML='';for(let r=0;r<N;r++)for(let c=0;c<N;c++){const d=document.createElement('div');d.className='cell';d.dataset.r=r;d.dataset.c=c;d.textContent=B.grid[r][c];boardEl.appendChild(d)}
  $('#explain').innerHTML='<div class="empty">찾은 낱말의 뜻과 예문이 여기에 나와요.</div>';
  renderList();drawCaps();msg('낱말은 가로·세로·대각선, 거꾸로도 숨어 있어요. 첫 글자부터 끝 글자까지 드래그하세요.');readyGo()}
